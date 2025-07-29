@@ -1,0 +1,16 @@
+name: node calculator
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4.2.2
+      - name: install node
+        uses: actions/setup-node@v3.9.1
+        with: 
+          node-version: 21
+      - name: install dependencies
+        run: npm install
+      - name: Run Test
+        run: npm test
